@@ -14,8 +14,29 @@ int main(){
 	    shuffle(a,b,c,d);
 	    cout << a << " " << b << " " << c << " " << d << endl;
 	}
-	
 	return 0;
 }
 
 //Do not modify source code above this line
+
+void shuffle(int &a, int &b, int &c, int &d){
+ int temp[4] = {50,100,500,1000};
+	int firstrand = rand()%4;
+	int secondrand = rand()%4;
+	int thirdrand = rand()%4;
+	int forthrand = rand()%4;
+	while(firstrand == secondrand){
+		secondrand = rand()%4;
+	}
+	
+	while(secondrand == thirdrand ){
+		thirdrand = rand()%4;
+	}
+	while(thirdrand == forthrand){
+		forthrand = rand()%4;
+	}
+	a = temp[firstrand];
+	b = temp[secondrand];
+	c = temp[thirdrand];
+	d = temp[forthrand];
+}
